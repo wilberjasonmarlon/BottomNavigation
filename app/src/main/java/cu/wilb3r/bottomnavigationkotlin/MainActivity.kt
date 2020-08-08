@@ -31,6 +31,9 @@ import cu.wilb3r.bottomnavigationkotlin.ui.ProfileFragment
             }
             true
         }
+
+        setBudge(R.id.menu_buy, 9)
+
     }
 
      private fun setFragment(fragment: Fragment, tag: String) {
@@ -39,4 +42,10 @@ import cu.wilb3r.bottomnavigationkotlin.ui.ProfileFragment
              commit()
          }
      }
+
+     fun setBudge(resourse: Int, count: Int) =
+         binding.bottomNavigationView.getOrCreateBadge(resourse).apply {
+             number = count
+             isVisible = true
+         }
 }
